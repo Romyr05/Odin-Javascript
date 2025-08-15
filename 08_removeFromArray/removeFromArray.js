@@ -11,6 +11,16 @@ const removeFromArray_ownSOL = function(array,...number) {
     return array
 };
 
+const removeFromArray = function(array,...number){
+    const newArr = [];
+    array.map((item) => {
+        if(!number.includes(item)){
+            newArr.push(item)
+        }
+    })
+    return newArr
+}
+
 
 console.log(removeFromArray([1, 2, 3, 4], 3,2));
 

@@ -12,6 +12,11 @@ function reverseString_nomethod(str){
     console.log(reversed)
 } 
 
+function reverseString(str){
+    reversed = str.split("").reverse().join("")
+    console.log(reversed)
+}
+
 reverseString('hello there')
 
 // Do not edit below this line

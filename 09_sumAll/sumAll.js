@@ -1,15 +1,17 @@
 const sumAll = function(start,end) {
-    result = 0
-    if(start < 0 || !Number.isInteger(start) || !Number.isInteger(end) ){
+    if (start < 0 || end < 0 || !Number.isInteger(start) || !Number.isInteger(end))  {
         return "ERROR"
     }
-    bigger = (start > end ) ? start : end
-    smaller = (start < end ) ? start : end
 
-    while(smaller <= bigger)
+    let small , big;
+    (start > end) 
+    ? (big = start, small = end)
+    : (small = start, big = end);
+
+    let result = 0
+    for(let i = small; i <= big; i++)
     {
-        result = result+smaller
-        smaller++;
+        result += i
     }
     return result
 };

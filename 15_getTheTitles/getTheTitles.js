@@ -12,13 +12,13 @@ const books = [
 
 //maps the array and then for each array it will pass the argument 
 // inside the arrow function which it will use to pass the function
-const getTheTitles = function(array) {
-    const bookie = []
-    array.forEach(book => {
-        bookie.push(book.title)
-    });
-    return bookie
-};
+function getTheTitles(books){
+  let listOfBooks = []
+  books.map((book) => {
+    listOfBooks.push(book.title)
+  })
+  return listOfBooks
+}
 
 console.log(getTheTitles(books))
 

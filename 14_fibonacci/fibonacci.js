@@ -1,28 +1,19 @@
-const fibonacci = function(n) {
-    n = Number(n);
-    if(n<0){
+function fibonacci(number){
+    if(number < 0){
         return "OOPS"
     }
-    if(n <=1){
-        return n
+
+    let n1 = 0
+    let n2 = 1
+    let sum = 0
+
+    for(let i = 2; i<=number;i++){
+        sum = n1 + n2
+        n1 = n2
+        n2 = sum
     }
-    current = 0
-    next = 1;
+    return sum
+}
 
-    for(let i = 2; i<=n; i++){
-        result = current + next;
-        current = next;
-        next = result;
-    }
-    return result;
-
-};
-
-console.log(fibonacci("-21"));
-
-
-
-
-
-// Do not edit below this line
-module.exports = fibonacci;
+test = fibonacci(4)
+console.log(test);

@@ -1,19 +1,13 @@
 const palindromes = function (string) { 
+    alphaNumeric_lower = string.replace(/[^a-zA-Z0-9]/g,"").toLowerCase()
+    console.log(alphaNumeric_lower)
 
-
-    clean = string.replace(/[^a-z0-9]/gi, "")
-    clean_lower = clean.toLowerCase()
-
-    s_right = clean_lower.length -1 
-    s_left = 0
-
-    
-    while(s_left < s_right){
-        if (clean_lower[s_right] !== clean_lower[s_left]){
+    let all = alphaNumeric_lower.length
+    for(let i = 0; i<alphaNumeric_lower.length;i++){
+        if(alphaNumeric_lower[all - 1] !== alphaNumeric_lower[i]){
             return false
         }
-        s_right--;
-        s_left++;
+        all--
     }
     return true
 };

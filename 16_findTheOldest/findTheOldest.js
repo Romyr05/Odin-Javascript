@@ -16,28 +16,28 @@
       },
     ]
 
-
-
-const get_age = (birth,death) => {
-    //no death given in the function
-    if(!death){
-        death = new Date().getFullYear();
+    const age = function(birth,death){
+      if(!death){
+        const date = new Date()
+        death = date.getFullYear()
+      }
+      return death - birth
     }
-    return death - birth
-}    
 
 
-const findTheOldest = function(people) {
-    
-    return people.reduce((latest,next) => {
-        const latest_age = get_age(latest.yearOfBirth, latest.yearOfDeath)
-        const next_age = get_age(next.yearOfBirth,next.yearOfDeath)
+    const findTheOldest = (event) => {
+      return event.reduce((oldest,current) => {
+        const oldestAge = age(oldest.yearOfBirth,oldest.yearOfDeath)
+        const currentAge = age(current.yearOfBirth,current.yearOfDeath)
+        console.log(oldestAge);
+        console.log(currentAge);
         
-        return latest_age > next_age ? latest : next //updating the accumulator and current
-    })
-};
+        
+        return (oldestAge > currentAge) ? oldest:current
+      },{})
+    }
 
-
-console.log(findTheOldest(people).name)
+    testing = findTheOldest(people)
+console.log(testing)
 // Do not edit below this line
 module.exports = findTheOldest;
